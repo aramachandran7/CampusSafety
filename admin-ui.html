@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Campus Safety Admin</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" />
+	<meta name="keywords" content="Sole Design Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+  <script src="admin.js" type="text/javascript"></script>
+	<script>
+    if (location.protocol != 'https:')
+    {
+    location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+    }
+		addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+	</script>
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+	 rel="stylesheet">
+</head>
+<body>
+
+	<section class="main-banner" id="home">
+    <div class="overlay">
+		<div class="layer">      
+			<div class="header-wthree-top-w3layouts text-right">
+					<h1 class="logo"><a href="/"><img src="images/Campus Safety Transparent.png" style="border-radius:12px;" width="260px" height="70px" /></a></h1>
+                <ul id="menu">
+                    <li>
+                        <input id="check02" type="checkbox" name="menu" />
+                        <label for="check02"><span class="fa fa-bars" aria-hidden="true"></span></label>
+                        <ul class="submenu">
+                            <li><a href="/">Return to Issue Reporting</a></li>
+                            <li><a href="#contact" class="scroll">Recent Reports</a></li>
+                            <li><a href="#services" class="scroll">Location</a></li>
+                            <li><a href="#contact1" class="scroll">All Logged Reports</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+            <ul style="padding:0;position:absolute;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);"class="list-unstyled apps-lists text-right">
+                <li>
+                    <a onclick="getValues()" id="authorize-button" class="btn" style="color:red"><span aria-hidden="true"></span >Authorize</a>
+                </li>
+            </ul>
+            </div>              
+            <div class="container">
+                <div class="baner-info-w3layouts text-center">
+                    <h3>Admin Access Issue Reports</h3>
+                    <h6 class="mx-auto mt-md-4 mt-3"><p style="color:white">View all issue reports here</p></h6>
+                </div>
+            </div>          
+            <div>
+            <br>
+            <ul style="padding:0;position:absolute;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);"class="list-unstyled apps-lists text-right">
+                <li>
+                    <a href="#contact" class="btn" style="color:red"><span aria-hidden="true"></span >Recent Reports</a>
+                </li>
+            </ul>
+            </div> 
+            <div>
+            <br>
+            <br>
+            <br>
+            <ul style="padding:0;position:absolute;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);"class="list-unstyled apps-lists text-right">
+                <li>
+                    <a href="#services" class="btn" style="color:red"><span aria-hidden="true"></span >Location</a>
+                 </li>
+            </ul>
+            </div> 
+            <div>
+            <br>
+            <br>
+            <br>
+            <ul style="padding:0;position:absolute;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);"class="list-unstyled apps-lists text-right">
+                <li>
+                    <a href="#contact1" class="btn" style="color:red"><span aria-hidden="true"></span >All Logged Reports </a>
+                </li>
+            </ul>
+            </div>                       
+        </div>
+    </div>
+    </section>
+    <section class="services py-lg-5 py-4" id="contact">
+        <div class="container py-sm-4 py-4">
+            <div class="header-wthree py-lg-5 py-3 text-center">
+                <h3 style="color:white"class="title mb-lg-3 mb-3">Recent Reports</h3>
+            </div>
+            <center>
+            <table style="display:table;border-collapse:collapse;border-spacing:2px;border-color:#fff" id="reportTable">
+              <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Comments</th>
+                <th>Issue Urgency</th>
+                <th>Type</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+              </tr>
+            </table>
+            </center>
+        </div>
+<!-- Insert List of recent Issues -->
+        </div>
+    
+    </section>
+    <!--// services -->
+
+  <!-- <section class="services py-lg-5 py-4" id="services">
+        <div class="container py-sm-4 py-4">
+            <div class="header-wthree py-lg-5 py-3 text-center">
+                <h3 class="title mb-lg-3 mb-3">Report Logs
+            </div
+        </div>
+<!-- Insert List of recent Issues -->
+        </div>
+    
+    </section>
+
+    <section class="contact py-5" id="services">
+        <div class="container">
+            <div class="header-wthree py-lg-5 py-4 text-center">
+                <h3 class="title mb-lg-3 mb-3">Location</h3>
+            </div>
+            <div class="contact-form mx-auto text-left">
+                
+            </div>
+            <div class="map my-md-5 my-3">
+              <div id="googleMap" style="width:100%;height:400px;"></div>
+            </div>
+        </div>
+
+    </section>
+    <script>
+      var latitude = 41.935739;
+      var longitude = -88.766512;
+      var marker = null
+      var map = null
+      var mapProp = null
+      var myLatLng = {lat: latitude, lng: longitude};
+      if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+      } 
+
+      function initMap() {
+          mapProp= {
+          center:new google.maps.LatLng(latitude,longitude),
+          zoom:18,
+          };
+          map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+          marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Issue Location'
+          });
+      }
+
+      function showPosition(position) {
+          latitude = position.coords.latitude;
+          longitude = position.coords.longitude;
+          console.log("Latitude: " + position.coords.latitude + 
+          "<br>Longitude: " + position.coords.longitude);
+      }
+      
+      function getOnclick(lat, long) {
+          console.log(lat, long)
+          window.location.hash = '#services';
+          window.location.hash = null;
+          latitude = parseFloat(lat);
+          longitude = parseFloat(long);
+          myLatLng = {lat: latitude, lng: longitude};
+          marker.setMap(null);
+
+          initMap();
+          // displayLocation(parseFloat(lat), parseFloat(long))
+      }
+
+      function displayLocation(latitude2, longitude2) {
+        marker.setMap(null);
+        mapProp = {
+          center:new google.maps.LatLng(latitude2,longitude2),
+          zoom:18,
+          };
+        map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        myLatLng = {lat: latitude2, lng: longitude2};
+        marker = new google.maps.Marker({position: myLatLng,
+        map: map,
+        title: "Issue Location"});
+      }
+      initMap();
+    </script>
+
+    <script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCN1ezlM84qTAwyo4PSWr-8dzMxHkogx5E&callback=initMap"
+    async defer></script>
+    <section style="background:#c41e3a" class="py-lg-5 py-4" id="contact1">
+        <div class="container py-sm-4 py-4">
+            <div class="header-wthree py-lg-5 py-3 text-center">
+                <h3 style="color:white"class="title mb-lg-3 mb-3">All Logged Reports</h3>
+            </div>
+            <center>
+            <table style="display:table;border-collapse:collapse;border-spacing:2px;border-color:#fff" id="allReportTable">
+              <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Comments</th>
+                <th>Issue Urgency</th>
+                <th>Type</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+              </tr>
+            </table>
+            </center>            
+        </div>
+<!-- Insert List of recent Issues -->
+        </div>
+    
+    </section>
+    <footer class="footer py-sm-5 py-5">
+        <div class="container py-xl-5 py-lg-3">
+            <div class="contact_grid_left">
+                <ul class="list-unstyled row text-left">
+                    <li class="col-lg-4 address-info">
+                        <div class="row">
+                            <div class="col-md-3 text-lg-center address-icon">
+                                <span class="fa fa-map-marker"></span>
+                            </div>
+                            <div class="col-md-9 text-left">
+                                <h6>Location</h6>
+                                <p>Northern Illinois University
+                                    <br>1425 Lincoln Hwy, DeKalb, IL 60115 </p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="col-lg-4 address-info">
+                        <div class="row">
+                            <div class="col-md-3 text-lg-center address-icon">
+                                <span class="fa fa-envelope-open-o"></span>
+                            </div>
+                            <div class="col-md-9 text-left">
+                                <h6>Email</h6>
+                                <a href="mailto:niupd@niu.edu">niupd@niu.edu</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-lg-4 address-info">
+                        <div class="row">
+                            <div class="col-md-3 text-lg-center address-icon">
+                                <span class="fa fa-mobile"></span>
+                            </div>
+                            <div class="col-md-9 text-left">
+                                <h6>Important Phone Numbers</h6>
+                                <a href="tel:8157539658"><p>Safe Walk: 815-753-9658</p></a>
+                                <a href="tel:8157531212"><p>Safe Line: 815-753-1212</p></a>
+                                <a href="tel:911"><p>Emergency: 911</p></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+            <p class="copy-right-grids text-li text-center my-sm-4 my-4">© 2019 NIU Huskie Hack. All Rights Reserved
+            </p>
+            <div class="top_move text-center">
+                <a href="#home" class="move-top"><span class="fa fa-angle-up  mb-3" aria-hidden="true"></span></a>
+            </div>
+        </div>
+    </footer>
+    </script>
+
+</body>
+</html>
